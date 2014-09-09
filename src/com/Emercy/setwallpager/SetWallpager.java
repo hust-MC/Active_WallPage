@@ -16,17 +16,20 @@ public class SetWallpager implements Runnable
 	public void run()
 	{
 		FileInputStream fis;
+		File file = new File(Environment.getExternalStorageDirectory()
+				+ "/wallpager/");
 
 		while (MainActivity.flag)
 		{
 			fis = null;
 
-			if (MainActivity.file.isDirectory())
+			if (file.isDirectory())
 			{
-			
-				File[] fileArray = MainActivity.file.listFiles();
+
+				File[] fileArray = file.listFiles();
 				if (null != fileArray && 0 != fileArray.length)
 				{
+					Log.d("MC", "file");
 					for (File f : fileArray)
 					{
 						if (!f.getPath().substring(f.getPath().length() - 3)

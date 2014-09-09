@@ -23,7 +23,7 @@ public class MainActivity extends Activity
 {
 
 	static WallpaperManager mWallManager;
-	static File file;
+	
 	static boolean flag = true;
 	Button start_bt, stop_bt;
 	Thread thread;
@@ -40,7 +40,7 @@ public class MainActivity extends Activity
 		stop_bt = (Button)findViewById(R.id.stop_bt);
 		
 		mWallManager = WallpaperManager.getInstance(this);
-		file = new File(Environment.getExternalStorageDirectory() + "/Download/Pictures/");
+		
 	}
 
 	public void onClick_start(View view)
